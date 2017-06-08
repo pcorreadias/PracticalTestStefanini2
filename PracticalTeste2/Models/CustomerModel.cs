@@ -32,10 +32,10 @@ namespace PracticalTeste2.Models
         //    public string Name { get; set; }
         //}
 
-        private StefaniniDBEntities Context;
+        private DatabaseEntities Context;
         public CustomerModel()
         {
-            Context = new StefaniniDBEntities();
+            Context = new DatabaseEntities();
         }
 
         public IQueryable<Customer> GetCustomers(CustomerSearchModel searchModel)

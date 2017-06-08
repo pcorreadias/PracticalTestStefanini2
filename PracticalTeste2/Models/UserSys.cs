@@ -11,8 +11,7 @@ namespace PracticalTeste2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class UserSys
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,11 +22,7 @@ namespace PracticalTeste2.Models
     
         public int Id { get; set; }
         public string Login { get; set; }
-        [Display(Name = "Login")]
-        [Required(ErrorMessage = "E-mail is required.", AllowEmptyStrings = false)]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Password is required.", AllowEmptyStrings = false)]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
         public int UserRoleId { get; set; }
     

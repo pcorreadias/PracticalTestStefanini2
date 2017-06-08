@@ -8,7 +8,7 @@ namespace MovieApp.Controllers
 {
     public class HomeController : Controller
     {
-        private StefaniniDBEntities _db = new StefaniniDBEntities();
+        private DatabaseEntities _db = new DatabaseEntities();
         private CustomerSearchModel _searchModel;
 
         public ActionResult Index()
@@ -35,7 +35,7 @@ namespace MovieApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (StefaniniDBEntities dc = new StefaniniDBEntities())
+                using (DatabaseEntities dc = new DatabaseEntities())
                 {
                     var v = dc.UserSys.Where(a => a.Email.Equals(user.Email) && a.Password.Equals(user.Password)).FirstOrDefault();
 

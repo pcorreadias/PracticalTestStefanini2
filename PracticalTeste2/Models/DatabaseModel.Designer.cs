@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\pcorr\documents\visual studio 2015\Projects\PracticalTeste2\PracticalTeste2\Models\StefaniniDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\pcorr\Documents\Visual Studio 2015\Projects\PracticalTeste2\PracticalTeste2\Models\DatabaseModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

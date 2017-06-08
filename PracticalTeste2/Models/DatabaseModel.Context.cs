@@ -13,10 +13,10 @@ namespace PracticalTeste2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StefaniniDBEntities : DbContext
+    public partial class DatabaseEntities : DbContext
     {
-        public StefaniniDBEntities()
-            : base("name=StefaniniDBEntities")
+        public DatabaseEntities()
+            : base("name=DatabaseEntities")
         {
         }
     

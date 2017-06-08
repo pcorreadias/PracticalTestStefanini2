@@ -137,45 +137,49 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Classification.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\DatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Gender.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Region.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StefaniniDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StefaniniDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StefaniniDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StefaniniDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StefaniniDB.edmx</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserRole.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserSys.cs">
-      <DependentUpon>StefaniniDB.tt</DependentUpon>
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker3.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -186,31 +190,31 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\StefaniniDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>StefaniniDB.Context.cs</LastGenOutput>
-      <DependentUpon>StefaniniDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\StefaniniDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StefaniniDB.edmx</DependentUpon>
-      <LastGenOutput>StefaniniDB.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\StefaniniDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StefaniniDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\StefaniniDB.edmx.diagram">
-      <DependentUpon>StefaniniDB.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Models\DatabaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>DatabaseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DatabaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>DatabaseModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\DatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DatabaseModel.edmx.diagram">
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -278,7 +282,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -296,9 +302,7 @@
     <Content Include="Views\Home\CustomerListSeller.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
