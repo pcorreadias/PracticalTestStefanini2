@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PracticalTeste2.Models.Customer>
+
+
+@{
+    ViewBag.Title = "Customer List";
+}
+
+<h2>Customer List</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Name: @Html.TextBox("Name")
+        Gender: @Html.DropDownList("Gender", new SelectList(ViewBag.ListOfGender, "Id", "Name"), "-- Select One --")
+    </p>
+    <p>
+        City: @Html.DropDownList("City", new SelectList(ViewBag.ListOfCity, "Id", "Name"), "-- Select One --")
+        Region: @Html.DropDownList("Region", new SelectList(ViewBag.ListOfRegion, "Id", "Name"), "-- Select One --")
+    </p>
+    <p>
+        Last Purchase: @Html.TextBox("LastPurchaseFrom", "", new { @class = "date-picker" })
+        until: @Html.TextBox("LastPurchaseTo", "", new { @class = "date-picker" })
+    </p>
+    <p>
+        Classification: @Html.DropDownList("Classification", new SelectList(ViewBag.ListOfClassification, "Id", "Name"), "-- Select One --")
+        Seller: @Html.DropDownList("Seller", new SelectList(ViewBag.ListOfSeller, "Id", "Login"), String.Empty)
+    </p>
+        <input type="submit" value="Search" />
+        <input type="button" onclick="location.href='@Url.Action("Index", "Home")'" value="Clear Fields" />
+
+}
+
+<table class="table">
+    <tr>
+        <th>Classification</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Last Purchase</th>
+        <th>Seller</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classification.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastPurchase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserSys.Login)
+        </td>
+    </tr>
+}
+</table>
+
+<!-- Code to wire up your DatePicker -->
+<script>
+    $(function () {
+        // This will make every element with the class "date-picker" into a DatePicker element
+        $('.date-picker').datepicker({ dateFormat: 'dd/mm/yy' });
+    });
+</script>

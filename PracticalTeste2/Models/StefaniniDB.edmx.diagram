@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0f4075ac324456ca08377bc27fe8dee" Name="Diagram1">
+        <EntityTypeShape EntityType="StefaniniDBModel.City" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.Classification" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.Customer" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.Gender" Width="1.5" PointX="6.375" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.Region" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.UserRole" Width="1.5" PointX="12.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StefaniniDBModel.UserSys" Width="1.5" PointX="9" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="StefaniniDBModel.FK_City_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="StefaniniDBModel.FK_Customer_City" />
+        <AssociationConnector Association="StefaniniDBModel.FK_Customer_Classification" />
+        <AssociationConnector Association="StefaniniDBModel.FK_Customer_Gender" />
+        <AssociationConnector Association="StefaniniDBModel.FK_Customer_Region" />
+        <AssociationConnector Association="StefaniniDBModel.FK_Customer_UserSys" />
+        <AssociationConnector Association="StefaniniDBModel.FK_UserSys_UserRole" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
