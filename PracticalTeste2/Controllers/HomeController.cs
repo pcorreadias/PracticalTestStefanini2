@@ -29,6 +29,16 @@ namespace MovieApp.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            Session["IdLoggedUser"] = null;
+            Session["NameLoggedUser"] = null;
+            Session["EmailLoggedUser"] = null;
+            Session["RoleLoggedUser"] = null;
+
+            return RedirectToAction("Login");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserSys user)
@@ -63,10 +73,8 @@ namespace MovieApp.Controllers
         {
             if (Session["IdLoggedUser"] != null)
             {
-                _searchModel = searchModel;
-
                 var business = new CustomerModel();
-                var customers = business.GetCustomers(_searchModel);
+                var customers = business.GetCustomers(searchModel);
 
                 ViewBag.ListOfGender = _db.Gender.ToList();
                 ViewBag.ListOfCity = _db.City.ToList();
@@ -80,18 +88,13 @@ namespace MovieApp.Controllers
                 return RedirectToAction("Login");
         }
 
-        public ActionResult CustomerListSeller(CustomerSearchModel searchModel, string sortOrder)
+        public ActionResult CustomerListSeller(CustomerSearchModel searchModel)
         {
             if (Session["IdLoggedUser"] != null)
             {
-                _searchModel = searchModel;
-
-                ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-                ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-
                 searchModel.Seller = int.Parse(Session["IdLoggedUser"].ToString());
                 var business = new CustomerModel();
-                var customers = business.GetCustomers(_searchModel);
+                var customers = business.GetCustomers(searchModel);
 
                 ViewBag.ListOfGender = _db.Gender.ToList();
                 ViewBag.ListOfCity = _db.City.ToList();

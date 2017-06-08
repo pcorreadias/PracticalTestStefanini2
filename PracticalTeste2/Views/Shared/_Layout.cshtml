@@ -23,7 +23,8 @@
                 @Html.ActionLink("Practical Test - Stefanini", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="float: right;">
+                    <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                 </ul>
             </div>
         </div>
